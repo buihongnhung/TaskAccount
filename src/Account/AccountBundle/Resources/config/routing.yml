@@ -1,0 +1,9 @@
+#account_homepage:
+#    path:     /hello/{name}
+#    defaults: { _controller: AccountBundle:Default:index }
+
+
+blog_front:
+    resource: "@AccountBundle/Controller/"
+    type:     annotation
+    prefix:   /

@@ -1,0 +1,14 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_driver: pdo_mysql
+    database_host: localhost
+    database_port: null
+    database_name: account
+    database_user: root
+    database_password: null
+    mailer_transport: gmail
+    mailer_host: null
+    mailer_user: steambot00001@gmail.com
+    mailer_password: asdwasdq
+    locale: en
+    secret: 6c45462c2e5dff1a349f02a23d1ae5268b6935d7

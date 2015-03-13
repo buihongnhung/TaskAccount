@@ -1,0 +1,23 @@
+Account\AccountBundle\Entity\Role:
+    type: entity
+    table: null
+    repositoryClass: Account\AccountBundle\Entity\RoleRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        role:
+            type: string
+            length: 255
+            unique: true
+    oneToMany:
+        users:
+            targetEntity: Account
+            mappedBy: roles
+    lifecycleCallbacks: {  }

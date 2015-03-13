@@ -1,0 +1,45 @@
+Account\AccountBundle\Entity\Account:
+    type: entity
+    table: null
+    repositoryClass: Account\AccountBundle\Entity\AccountRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        username:
+            type: string
+            length: 255
+            unique: true
+        password:
+            type: string
+            length: 255
+        email:
+            type: string
+            length: 255
+            unique: true
+        is_active:
+            type: boolean
+#    manyToMany:
+#        roles:
+#            targetEntity: Role
+#            inversedBy: users
+#            joinTable:
+#                name: account_role
+#                joinColumns:
+#                    account_id:
+#                        referencedColumnName: id
+#                inverseJoinColumns:
+#                    role_id:
+#                        referencedColumnName: id
+    manyToOne:
+        roles:
+            targetEntity: Role
+            inversedBy: users
+            joinColumn:
+                name: role_id
+                referencedColumnName: id
+
+    lifecycleCallbacks: {  }

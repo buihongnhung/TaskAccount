@@ -1,0 +1,29 @@
+Account\AccountBundle\Entity\CoreUser:
+    type: entity
+    table: fos_user
+    repositoryClass: Account\AccountBundle\Entity\CoreUserRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        facebook_id:
+            type: string
+            length: 255
+            unique: true
+            nullable: true
+    manyToMany:
+        groups:
+            targetEntity: CoreGroup
+            joinTable:
+                name: fos_user_group
+                joinColumns:
+                    user_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    group_id:
+                        referencedColumnName: id
+    lifecycleCallbacks: {  }
+

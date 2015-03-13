@@ -1,0 +1,11 @@
+Account\AccountBundle\Entity\CoreGroup:
+    type: entity
+    table: fos_group
+    repositoryClass: Account\AccountBundle\Entity\CoreGroupRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    lifecycleCallbacks: {  }

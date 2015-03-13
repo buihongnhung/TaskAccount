@@ -1,0 +1,32 @@
+
+{% extends '::base.html.twig' %}
+{% block body %}
+
+{% for flashMessage in app.session.flashbag.get('warning') %}
+    <div class="flash-notice">
+        {{ flashMessage }}
+    </div>
+{% endfor %}
+
+<div>
+    <h1>Welcome to ABC</h1>
+    {% if name is defined %}
+        {{ name }}
+        {% if fbid is defined %}
+            <a href="/login/facebook">Connect with FB</a>
+        {% endif %}
+
+        <a href="/account/changepassword">Change Password</a>
+        <a href="/account/logout">Logout</a>
+    {% else %}
+        <a href="/login">Login</a>
+        <a href="/account/resetpassword">Forgot password</a>
+        <a href="/login/facebook">Login via FB</a>
+        <a href="/register">Register</a>
+    {% endif %}
+</div>
+
+{% endblock %}
+
+
+

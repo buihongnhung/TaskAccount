@@ -1,0 +1,22 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+    <a href="/admin/addgroup">ADD GROUP</a>
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>UserName</td>
+            <td>Email</td>
+            <td>Roles</td>
+
+        </tr>
+        {% for account in accounts %}
+            <tr>
+                <td>{{ account.id }}</td>
+                <td>{{ account.username }}</td>
+                <td>{{ account.email }}</td>
+                <td><a href="/admin/update/{{ account.id }}">Edit</a></td>
+                <td><a href="/admin/delete/{{ account.id }}">Delete</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
